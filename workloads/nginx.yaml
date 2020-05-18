@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-to-dev-scaleout
-  namespace: demo
+  namespace: test01
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginx-dev
@@ -19,8 +19,8 @@ spec:
         name: nginx-to-dev-scaleout
         resources:
           limits:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 250m
+            memory: 25Mi
           requests:
             cpu: 50m
-            memory: 50Mi
+            memory: 20Mi
